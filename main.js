@@ -79,3 +79,9 @@ function ubahStatus(tombol) {
     tombol.dataset.status = "Selesai";
   }
 }
+
+// Event listener untuk hapus tugas
+$(".tombol-hapus").click(async function () {
+  await hapustugas($(this).attr("data-id"));
+  location.reload();
+});
