@@ -1,71 +1,106 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #9FD3FF;
+  margin: 20px;
+  padding: 0;
+}
+
 h1 {
   text-align: center;
-  font-size: 2.6rem;
-  margin-bottom: 3rem;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-/* Warna latar belakang keseluruhan */
-body {
-    background-color: #E2E7EB; /* Biru muda */
-    font-family: Arial, sans-serif;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Gaya tabel */
-.table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #bbdefb; /* Biru lebih muda */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    overflow: hidden;
-    
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
 }
 
-/* Header tabel */
-.table thead {
-    background-color: #F6649C; /* Biru sedang */
-    color: white;
+th {
+  background-color: #007bff;
+  color: white;
+  text-transform: uppercase;
 }
 
-.table thead th {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 2px solid #1976D2; /* Biru lebih gelap */
+tr:hover {
+  background-color: #f1f1f1;
 }
 
-/* Baris bergaris */
-.table-striped tbody tr:nth-child(odd) {
-    background-color: #023962; /* Warna lebih cerah */
+.tombol {
+  display: block;
+  width: 150px;
+  text-align: center;
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 20px auto;
+  transition: 0.3s;
 }
 
-.table-striped tbody tr:nth-child(even) {
-    background-color: #003969;
+.tombol:hover {
+  background-color: #218838;
 }
 
-/* Hover efek */
-.table tbody tr:hover {
-    background-color: #2359D7; /* Biru yang lebih cerah */
-    transition: 0.3s;
+.btn-warning, .btn-danger {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-/* Sel tabel */
-.table td, .table th {
-    padding: 12px;
-    border-bottom: 1px solid #3C6382;
+.btn-warning {
+  background-color: #ffc107;
+  color: black;
 }
 
-/* Tombol */
-.btn {
-    background-color: #FF0505;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 3px;
-    transition: background 0.3s;
+.btn-warning:hover {
+  background-color: #e0a800;
 }
 
-.btn:hover {
-    background-color: #67839E;
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
 }
-  
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-status {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.btn-status[data-status="Belum Selesai"] {
+  background-color: #dc3545; /* Merah */
+  color: white;
+}
+
+.btn-status[data-status="Sedang Dikerjakan"] {
+  background-color: #ffc107; /* Kuning */
+  color: black;
+}
+
+.btn-status[data-status="Selesai"] {
+  background-color: #28a745; /* Hijau */
+  color: white;
+}
