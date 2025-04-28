@@ -124,3 +124,10 @@ function updateWarnaStatus(button, status) {
     button.css("background-color", "#28a745").css("color", "white");
   }
 }
+
+// Atur warna status setelah halaman dimuat
+$(document).ready(function () {
+  $(".btn-status").each(function () {
+    updateWarnaStatus($(this), $(this).attr("data-status"));
+  });
+});
