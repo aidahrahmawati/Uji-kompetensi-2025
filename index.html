@@ -60,3 +60,9 @@
          );
          nomor++;
        });
+       
+              // Gunakan event delegation untuk hapus tugas
+       $(document).on('click', '.tombol-hapus', async function() {
+         await hapustugas($(this).attr('data-id'));
+         location.reload();
+       });
