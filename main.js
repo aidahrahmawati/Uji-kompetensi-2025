@@ -24,3 +24,8 @@ const firebaseConfig = {
 // Inisialisasi Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+
+export async function ambilDaftarToDoList() {
+  const refDokumen = collection(db, "toDoList");
+  const kueri = query(refDokumen, orderBy("nama"));
+  const cuplikanKueri = await getDocs(kueri);
