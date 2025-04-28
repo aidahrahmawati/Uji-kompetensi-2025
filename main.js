@@ -61,3 +61,16 @@ export async function tambahToDoList(nama, prioritas, status, tanggal) {
     console.log('Gagal menambah toDoList ' + e);
   }
 }
+
+export async function hapusToDoList(docId) {
+  await deleteDoc(doc(db, "toDoList", docId));
+}  
+
+export async function ubahToDoList(docId, nama, prioritas, status, tanggal) {
+  await updateDoc(doc(db, "toDoList", docId), {
+    nama: nama,
+    prioritas: prioritas,
+    status: status,
+    tanggal: tanggal
+  });
+}
