@@ -43,3 +43,21 @@ export async function ambilDaftarToDoList() {
   
   return hasil;
 }
+
+export function formatAngka(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
+export async function tambahToDoList(nama, prioritas, status, tanggal) {
+  try {
+    const dokRef = await addDoc(collection(db, 'toDoList'), {
+      nama: nama,
+      prioritas: prioritas,
+      status: status,
+      tanggal: tanggal 
+    });
+    console.log('Berhasil menambah toDoList ' + dokRef.id);
+  } catch (e) {
+    console.log('Gagal menambah toDoList ' + e);
+  }
+}
