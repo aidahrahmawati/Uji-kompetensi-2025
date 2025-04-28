@@ -29,3 +29,14 @@ export async function ambilDaftarToDoList() {
   const refDokumen = collection(db, "toDoList");
   const kueri = query(refDokumen, orderBy("nama"));
   const cuplikanKueri = await getDocs(kueri);
+  
+  let hasil = [];
+  cuplikanKueri.forEach((dok) => {
+    hasil.push({
+      id: dok.id,
+      nama: dok.data().nama,
+      prioritas: dok.data().prioritas,
+      status: dok.data().status,
+      tanggal: dok.data().tanggal,
+    });
+  });
