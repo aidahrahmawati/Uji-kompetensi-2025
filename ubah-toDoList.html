@@ -51,3 +51,8 @@
       const parameterURL = new URLSearchParams(queryString);
       const docId = parameterURL.get('docId');
       const Absensi = await ambiltugas(docId);
+      
+            elementugas.value = Absensi.tugas;
+      elemenstatus.value = Absensi.status;
+      elemenprioritas.value = Absensi.prioritas;
+      elementanggal.value = Absensi.tanggal;
