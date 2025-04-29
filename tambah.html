@@ -49,3 +49,16 @@
         <label class="form-label">tanggal</label>
         <input type="date" class="form-control" id="input-tanggal">
       </div>
+      
+      <button type="submit" class="btn btn-primary" id="tombol-tambah">Simpan</button>
+    </form>
+
+
+    <script type="module">
+      import { tambahtugas } from './main.js';
+
+      let tomboltambah = document.getElementById('tombol-tambah');
+      let elementugas = document.getElementById('input-tugas');
+      let elemenstatus = document.getElementById('input-status');
+      let elemenprioritas = document.getElementById('input-prioritas');
+      let elementanggal = document.getElementById('input-tanggal');
