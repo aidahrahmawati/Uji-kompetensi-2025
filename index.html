@@ -66,9 +66,12 @@
      $(document).ready(async function() {
        let elemenDaftar = $("#daftar-tugas > tbody");
        // Target elemen tabel
-       let daftartugas = await ambildaftartugas();
+       let daftartugas = await ambildaftartugas();// Ambil data tugas dari sumber eksternal
+       
+      
        let nomor = 1;
        daftartugas.forEach((data) => {
+        // Tambahkan baris ke tabel
          elemenDaftar.append(
            `<tr>
              <th>${nomor}</th>
