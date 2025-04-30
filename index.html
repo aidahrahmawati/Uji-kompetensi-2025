@@ -1,21 +1,32 @@
-<!DOCTYPE html>
- <html lang="en">
+<!DOCTYPE html> <!-- Menentukan bahwa ini adalah dokumen HTML5 -->
+ <html lang="en"><!-- Bahasa utama halaman adalah bahasa Inggris -->
 
  <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta charset="UTF-8"> <!-- Mengatur karakter encoding ke UTF-8 -->
+   <meta http-equiv="X-UA-Compatible" content="IE=Edge"><!-- Kompatibilitas dengan Internet Explorer -->
+   <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Supaya responsive di perangkat mobile -->
 
-   <title>To-Do List</title>
+
+   <title>To-Do List</title><!-- Judul halaman -->
+
+  <!-- Mengimpor CSS Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <!-- Mengimpor JavaScript Bootstrap -->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+   
+     <!-- Mengimpor jQuery -->
    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
    <script type="module" src="main.js"></script>
+   
+     <!-- Menghubungkan file CSS eksternal -->
    <link rel="stylesheet" href="style.css">    
  <header>
         <h1> to-do list aidhrahmawti🌷</h1>
         <p>Kelola tugas Anda dengan mudah dan efisien</p>
     </header>
+    
+    
  <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="fanjusllse">
     menu
@@ -27,30 +38,34 @@
   </head>
   
    <body>
+       <!-- Tabel daftar tugas -->
    <table class="table" id="daftar-tugas">
      <thead>
        <tr>
        </tr>
        <tr>
-         <th scope="col">#</th>
-         <th scope="col">tugas</th>
-         <th scope="col" id="status">status</th>
-         <th scope="col">prioritas</th>
-         <th scope="col">tanggal</th>
-         <th>aksi</th>
-         <th>aksi</th>
+         <th scope="col">#</th><!-- Nomor urut -->
+         <th scope="col">tugas</th> <!-- Nama tugas -->
+         <th scope="col" id="status">status</th><!-- Status tugas -->
+         <th scope="col">prioritas</th><!-- Prioritas tugas -->
+         <th scope="col">tanggal</th><!-- Tanggal tugas -->
+         <th>aksi</th><!-- Aksi ubah -->
+         <th>aksi</th><!-- Aksi hapus -->
        </tr>
      </thead>
      <tbody>
      </tbody>
    </table>
 
-
+  <!-- Script ES6 dengan module -->
    <script type="module">
+       // Import fungsi dari file eksternal
      import { ambildaftartugas, hapustugas } from './main.js';
 
+    // Fungsi dijalankan setelah halaman siap
      $(document).ready(async function() {
        let elemenDaftar = $("#daftar-tugas > tbody");
+       // Target elemen tabel
        let daftartugas = await ambildaftartugas();
        let nomor = 1;
        daftartugas.forEach((data) => {
